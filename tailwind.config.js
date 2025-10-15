@@ -12,6 +12,11 @@ module.exports = {
         foreground: "#F1F0CC",
         banner: "#006548",
       },
+      fontFamily: {
+        title: ["Raleway", "sans-serif"],
+        content: ["Poppins", "sans-serif"],
+        fantasy: ["Mochiy Pop One", "sans-serif"],
+      },
     },
   },
   plugins: [],

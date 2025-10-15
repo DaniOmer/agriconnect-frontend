@@ -49,8 +49,8 @@ function Header() {
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
-    <header className="relative py-4 lg:py-8 blur-in overflow-hidden">
-      <nav className="container mx-auto px-4 xl:px-0 flex justify-between items-center gap-3 lg:gap-10 z-50">
+    <header className="fixed w-full h-[75px] flex items-center backdrop-blur-sm">
+      <nav className="container mx-auto xl:px-0 flex justify-between items-center gap-3 lg:gap-10 z-50">
         <h1 className="uppercase text-xl font-bold">Agriconnect</h1>
 
         <div className="xl:flex-1 flex justify-between items-center">
@@ -115,11 +115,11 @@ function Header() {
           id="mobile-nav"
           role="dialog"
           aria-modal="true"
-          className={`fixed left-0 right-0 z-40 top-14 transition-transform duration-300 ${
-            isMenuOpen ? "translate-x-0" : "translate-x-[600px]"
+          className={`fixed left-0 right-0 z-50 top-14  lg:top-20 py-10 bg-banner transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ul className="container mx-auto bg-banner text-foreground flex flex-col justify-center items-center py-10 gap-6">
+          <ul className="container mx-auto text-foreground flex flex-col justify-center items-center gap-6">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
@@ -131,13 +131,24 @@ function Header() {
                 </Link>
               </li>
             ))}
-            <li className="w-full px-4">
+            <li className="w-full sm:w-1/2 px-4">
               <SearchInput
                 onSubmit={handleSearchSubmit}
                 className="w-full flex"
               />
             </li>
           </ul>
+
+          <div className="xl:hidden mt-10 flex justify-center mx-auto gap-16 text-foreground">
+            <div className="flex items-center gap-1.5">
+              <CircleUserRound />
+              <p>Compte</p>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <ShoppingCart />
+              <p>Panier</p>
+            </div>
+          </div>
         </div>
       </div>
     </header>
