@@ -11,9 +11,10 @@ import {
 type SearchInputProps = {
   onChange?: (query: string) => void;
   onSubmit?: (query: string) => void;
+  className?: string;
 };
 
-function SearchInput({ onChange, onSubmit }: SearchInputProps) {
+function SearchInput({ onChange, onSubmit, ...props }: SearchInputProps) {
   const [query, setQuery] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +29,7 @@ function SearchInput({ onChange, onSubmit }: SearchInputProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={`${props.className}`}>
       <InputGroup className="relative rounded-full min-w-[300px]">
         <InputGroupInput
           placeholder="Recherche un produit"

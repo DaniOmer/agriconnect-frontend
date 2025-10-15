@@ -1,39 +1,82 @@
 "use client";
 
 import Link from "next/link";
-import { CircleUserRound, ShoppingCart } from "lucide-react";
-
+import { CircleUserRound, ShoppingCart, Menu, X } from "lucide-react";
 import SearchInput from "../searchInput";
+import { Button } from "../ui/button";
+import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 
 function Header() {
-  const handleSearchSubmit = () => {
-    console.log("Is submitting...");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = useMemo(
+    () => [
+      { href: "/store", label: "Boutique" },
+      { href: "/blog", label: "Blog" },
+      { href: "/products", label: "Produit" },
+      { href: "/contact", label: "Contact" },
+      { href: "/about", label: "À propos" },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.documentElement.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  const handleSearchSubmit = (q?: string) => {
+    if (!q) return;
+    // TODO: router.push(`/search?q=${encodeURIComponent(q)}`)
+    console.log("Search:", q);
   };
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname?.startsWith(href);
+
   return (
-    <header className="py-4 lg:py-8 blur-in">
-      <nav className="container fixed translate-x-1/2 right-1/2 flex justify-between items-center gap-3 lg:gap-28">
+    <header className="relative py-4 lg:py-8 blur-in overflow-hidden">
+      <nav className="container mx-auto px-4 xl:px-0 flex justify-between items-center gap-3 lg:gap-10 z-50">
         <h1 className="uppercase text-xl font-bold">Agriconnect</h1>
-        <div className="flex-1 flex justify-between items-center">
-          <ul className="flex gap-4 lg:gap-8">
-            <li>
-              <Link href="/store">Boutique</Link>
-            </li>
-            <li>
-              <Link href="/store">Blog</Link>
-            </li>
-            <li>
-              <Link href="/store">Produit</Link>
-            </li>
-            <li>
-              <Link href="/store">Contact</Link>
-            </li>
-            <li>
-              <Link href="/store">À propos</Link>
-            </li>
+
+        <div className="xl:flex-1 flex justify-between items-center">
+          <ul className="hidden xl:flex gap-6">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={
+                    isActive(item.href)
+                      ? "font-semibold underline underline-offset-4"
+                      : ""
+                  }
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-          <SearchInput onSubmit={handleSearchSubmit} />
+          <SearchInput
+            className="hidden lg:flex"
+            onSubmit={handleSearchSubmit}
+          />
         </div>
-        <div className="flex gap-4">
+
+        <div className="hidden xl:flex gap-4">
           <div className="flex items-center gap-1.5">
             <CircleUserRound />
             <p>Compte</p>
@@ -43,8 +86,62 @@ function Header() {
             <p>Panier</p>
           </div>
         </div>
+
+        {/* Mobile */}
+        <div className="xl:hidden">
+          <Button
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setIsMenuOpen((v) => !v)}
+          >
+            {isMenuOpen ? <X /> : <Menu />}
+          </Button>
+        </div>
       </nav>
+
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black/20 transition-opacity ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      {/* Mobile navigation */}
+      <div className="xl:hidden">
+        <div
+          id="mobile-nav"
+          role="dialog"
+          aria-modal="true"
+          className={`fixed left-0 right-0 z-40 top-14 transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "translate-x-[600px]"
+          }`}
+        >
+          <ul className="container mx-auto bg-banner text-foreground flex flex-col justify-center items-center py-10 gap-6">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li className="w-full px-4">
+              <SearchInput
+                onSubmit={handleSearchSubmit}
+                className="w-full flex"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }
+
 export default Header;
