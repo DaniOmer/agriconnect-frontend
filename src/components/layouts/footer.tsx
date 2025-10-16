@@ -72,7 +72,7 @@ function Footer() {
                   <Link href="/products?name=vegetable">Panier de légume</Link>
                 </li>
                 <li>
-                  <Link href="/products?name=yam">Sac d'igname</Link>
+                  <Link href="/products?name=yam">Sac d&apos;igname</Link>
                 </li>
                 <li>
                   <Link href="/products?name=honey">Pot de miel</Link>

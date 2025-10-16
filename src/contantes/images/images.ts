@@ -6,7 +6,7 @@ import ProcessedFood from "../../../public/images/processed_food.png";
 import SpeciesAndCondiments from "../../../public/images/spices_and_condiments.png";
 import CerealsAndGrains from "../../../public/images/cereals_grains.png";
 
-export default {
+const images = {
   Women,
   Tomato,
   Cassava,
@@ -15,3 +15,5 @@ export default {
   SpeciesAndCondiments,
   CerealsAndGrains,
 };
+
+export default images;
