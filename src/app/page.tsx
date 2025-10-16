@@ -1,5 +1,6 @@
-import Banner from "@/components/banner";
-import Categories from "@/components/categories";
+import Banner from "@/components/sections/banner";
+import Categories from "@/components/sections/categories";
+import Trust from "@/components/sections/trust";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <main>
         <Banner />
         <Categories />
+        <Trust />
       </main>
     </div>
   );

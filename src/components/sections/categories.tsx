@@ -1,4 +1,4 @@
-import CategoryCard from "./categoryCard";
+import CategoryCard from "../categoryCard";
 import images from "@/contantes/images/images";
 
 function Categories() {
