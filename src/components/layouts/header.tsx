@@ -101,7 +101,7 @@ function Header() {
 
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/20 transition-opacity ${
+        className={`fixed z-40 inset-0 min-h-screen top-0 right-0 bottom-0 bg-black/20 transition-opacity ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
