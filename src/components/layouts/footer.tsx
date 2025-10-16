@@ -32,7 +32,7 @@ function Footer() {
               <h2 className="font-semibold text-base mb-2">
                 Qui sommes-nous ?
               </h2>
-              <ul>
+              <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="/about-us">Notre histoire</Link>
                 </li>
@@ -49,7 +49,7 @@ function Footer() {
             </div>
             <div>
               <h2 className="font-semibold text-base mb-2">Liens utils</h2>
-              <ul>
+              <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="/our-partners">Nos fournisseurs</Link>
                 </li>
@@ -68,7 +68,7 @@ function Footer() {
               <h2 className="font-semibold text-base mb-2">
                 Nos meilleurs produits
               </h2>
-              <ul>
+              <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="/products?name=cassava">Manioc</Link>
                 </li>
@@ -88,7 +88,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-black py-10 flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center">
+        <div className="border-t border-slate-300 py-10 flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center">
           <ul className="flex gap-4">
             <li>
               <Link href="terms-of-use" className="underline cursor-pointer">
