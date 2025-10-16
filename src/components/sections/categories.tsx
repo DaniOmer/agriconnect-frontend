@@ -22,19 +22,19 @@ function Categories() {
             className="bg-purple-100"
           />
           <CategoryCard
-            image={images.Cassava}
+            image={images.CerealsAndGrains}
             alt="Cereals & Grains"
             name="Céréales & Grains"
             className="bg-orange-200"
           />
           <CategoryCard
-            image={images.Cassava}
+            image={images.ProcessedFood}
             alt="Processed products"
             name="Produits transformés"
             className="bg-purple-200"
           />
           <CategoryCard
-            image={images.Tomato}
+            image={images.SpeciesAndCondiments}
             alt="Spices & condiments"
             name="Épices & condiments"
             className="bg-foreground"

@@ -11,7 +11,7 @@ function CategoryCard({ image, alt, name, ...props }: CardProps) {
     <div
       className={`flex flex-col gap-6 py-4 justify-center items-center rounded-xl ${props.className}`}
     >
-      <Image src={image} alt={alt} className="w-44" />
+      <Image src={image} alt={alt} className="w-44 object-cover" />
       <p className="font-semibold text-lg">{name}</p>
     </div>
   );

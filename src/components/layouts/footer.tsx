@@ -12,7 +12,7 @@ function Footer() {
       <div className="container mx-auto px-4 xl:px-0 ">
         <div className="py-10 lg:py-16 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8 xl:gap-32">
           <div className="md:col-span-2 flex flex-col">
-            <h1 className="uppercase text-xl font-bold">Agriconnect</h1>
+            <h1 className="uppercase text-xl font-bold mb-2">Agriconnect</h1>
             <p>
               Agriconnect est une plateforme 100% guinéenne dédiée à la
               promotion des produits agricoles locaux. Notre mission :
@@ -27,16 +27,16 @@ function Footer() {
               </h2>
               <ul>
                 <li>
-                  <Link href="/about">Notre histoire</Link>
+                  <Link href="/about-us">Notre histoire</Link>
                 </li>
                 <li>
-                  <Link href="/our-valuees">Nos valeurs</Link>
+                  <Link href="/our-values">Nos valeurs</Link>
                 </li>
                 <li>
                   <Link href="/contact-us">Nous contacter</Link>
                 </li>
                 <li>
-                  <Link href="/help">Aide</Link>
+                  <Link href="/help-center">Aide</Link>
                 </li>
               </ul>
             </div>
@@ -44,16 +44,16 @@ function Footer() {
               <h2 className="font-semibold text-base mb-2">Liens utils</h2>
               <ul>
                 <li>
-                  <Link href="/help">Nos fournisseurs</Link>
+                  <Link href="/our-partners">Nos fournisseurs</Link>
                 </li>
                 <li>
-                  <Link href="/about">Moyens de paiement</Link>
+                  <Link href="/payment-method">Moyens de paiement</Link>
                 </li>
                 <li>
-                  <Link href="/our-valuees">Délai de livraison</Link>
+                  <Link href="/delivery-policy">Délai de livraison</Link>
                 </li>
                 <li>
-                  <Link href="/contact-us">FAQ</Link>
+                  <Link href="/questions-and-answers">FAQ</Link>
                 </li>
               </ul>
             </div>
@@ -63,19 +63,19 @@ function Footer() {
               </h2>
               <ul>
                 <li>
-                  <Link href="/about">Manioc</Link>
+                  <Link href="/products?name=cassava">Manioc</Link>
                 </li>
                 <li>
-                  <Link href="/our-valuees">Tomate grappe</Link>
+                  <Link href="/products?name=tomato">Tomate grappe</Link>
                 </li>
                 <li>
-                  <Link href="/contact-us">Panier de légume</Link>
+                  <Link href="/products?name=vegetable">Panier de légume</Link>
                 </li>
                 <li>
-                  <Link href="/contact-us">Sac d'igname</Link>
+                  <Link href="/products?name=yam">Sac d'igname</Link>
                 </li>
                 <li>
-                  <Link href="/help">Pot de miel</Link>
+                  <Link href="/products?name=honey">Pot de miel</Link>
                 </li>
               </ul>
             </div>
