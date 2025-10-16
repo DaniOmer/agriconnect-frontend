@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { CircleUserRound, ShoppingCart, Menu, X } from "lucide-react";
 import SearchInput from "../searchInput";
 import { Button } from "../ui/button";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
+import images from "@/contantes/images/images";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +53,7 @@ function Header() {
   return (
     <header className="fixed w-full h-[75px] px-4 xl:px-0 flex items-center z-30 backdrop-blur-md">
       <nav className="container mx-auto flex justify-between items-center lg:gap-10 z-50">
-        <h1 className="uppercase text-xl font-bold">Agriconnect</h1>
+        <Image src={images.Logo} alt="Agriconnect logo" className="w-40" />
 
         <div className="xl:flex-1 flex justify-between items-center">
           <ul className="hidden xl:flex gap-6">

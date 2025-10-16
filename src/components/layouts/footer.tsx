@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCcVisa,
@@ -6,13 +7,19 @@ import {
   faCcPaypal,
 } from "@fortawesome/free-brands-svg-icons";
 
+import images from "@/contantes/images/images";
+
 function Footer() {
   return (
     <footer>
       <div className="container mx-auto px-4 xl:px-0 ">
         <div className="py-10 lg:py-16 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8 xl:gap-32">
           <div className="md:col-span-2 flex flex-col">
-            <h1 className="uppercase text-xl font-bold mb-2">Agriconnect</h1>
+            <Image
+              src={images.Logo}
+              alt="Agriconnect logo"
+              className="w-40 mb-4"
+            />
             <p>
               Agriconnect est une plateforme 100% guinéenne dédiée à la
               promotion des produits agricoles locaux. Notre mission :

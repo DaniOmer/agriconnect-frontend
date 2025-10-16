@@ -5,8 +5,10 @@ import Vegetables from "../../../public/images/vegetables.png";
 import ProcessedFood from "../../../public/images/processed_food.png";
 import SpeciesAndCondiments from "../../../public/images/spices_and_condiments.png";
 import CerealsAndGrains from "../../../public/images/cereals_grains.png";
+import Logo from "../../../public/images/logo.png";
 
 const images = {
+  Logo,
   Women,
   Tomato,
   Cassava,
