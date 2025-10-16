@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import FontAwesomeSetup from "./fontawesome";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.theagriconnect.com"),
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
+        <FontAwesomeSetup />
         <Header />
         <div className="pt-[75px] font-content">{children}</div>
         <Footer />

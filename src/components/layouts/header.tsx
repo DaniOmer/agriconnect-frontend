@@ -49,7 +49,7 @@ function Header() {
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
-    <header className="fixed w-full h-[75px] px-4 xl:px-0 flex items-center z-30 backdrop-blur-sm">
+    <header className="fixed w-full h-[75px] px-4 xl:px-0 flex items-center z-30 backdrop-blur-md">
       <nav className="container mx-auto flex justify-between items-center lg:gap-10 z-50">
         <h1 className="uppercase text-xl font-bold">Agriconnect</h1>
 
