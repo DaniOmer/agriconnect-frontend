@@ -18,8 +18,8 @@ function PropularProduct() {
       name: "Patates douces",
       price: 6500,
       description: "Patates douces sucrées et riches en nutriments.",
-      per: "kg",
-      image: images.Cassava,
+      per: "lot",
+      image: images.Potato,
     },
     {
       name: "Manioc frais",
@@ -34,36 +34,35 @@ function PropularProduct() {
       description:
         "Miel naturel non filtré, récolté dans les forêts guinéennes.",
       per: "litre",
-      image: images.SpeciesAndCondiments,
+      image: images.Honey,
     },
     {
       name: "Poivrons",
       price: 40000,
       description: "Un assortiment coloré de fruits et légumes de saison.",
       per: "panier",
-      image: images.Tomato,
+      image: images.Peppers,
     },
     {
-      name: "Maïs jaune",
+      name: "Riz",
       price: 12000,
-      description: "Mélange de mil, riz local, maïs et fonio.",
+      description: "Riz étuvé produit dans le nord du pays.",
       per: "kg",
-      image: images.CerealsAndGrains,
+      image: images.Rice,
     },
     {
       name: "Igname",
       price: 15000,
-      description:
-        "Sélection d'épices locales : piment, poivre, gingembre, curry.",
+      description: "Igname de qualité pour tout type de préparation.",
       per: "lot",
-      image: images.Cassava,
+      image: images.Yam,
     },
     {
       name: "Huile de palme",
       price: 20000,
-      description: "Huile de palme, pâte d’arachide, gari et sauces locales.",
-      per: "lot",
-      image: images.ProcessedFood,
+      description: "Huile de palme produit de manière artisanale.",
+      per: "litre",
+      image: images.Palmoil,
     },
   ];
 
