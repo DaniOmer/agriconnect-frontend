@@ -7,7 +7,7 @@ import images from "@/contantes/images/images";
 function Banner() {
   return (
     <section className="bg-background py-10 px-4 xl:px-0 md:py-20">
-      <div className="container mx-auto flex flex-col-reverse xl:flex-row items-center gap-10 xl:gap-40">
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 xl:gap-40">
         <div>
           <span className="text-sm">Bienvenue chez Agriconnect</span>
           <h1 className="font-bold font-title text-3xl lg:text-5xl mt-2 mb-4">
@@ -27,7 +27,7 @@ function Banner() {
             <MoveRight />
           </Link>
         </div>
-        <div className="min-w-[15rem] lg:h-[25rem] lg:min-w-[25rem] bg-banner rounded-full overflow-y-hidden">
+        <div className="min-w-[15rem] lg:h-[25rem] lg:min-w-[25rem] bg-banner rounded-full overflow-hidden">
           <div className="lg:translate-x-12">
             <Image
               src={images.Women}
